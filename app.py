@@ -2,8 +2,10 @@ from flask import Flask,render_template,url_for,request
 import requests as req
 from bs4 import BeautifulSoup
 import time
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+run_with_ngrok(app)
 
 @app.route("/",methods=["GET", "POST"]) #index (Thai)
 def index():
